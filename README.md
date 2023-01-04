@@ -15,10 +15,7 @@ Models used: CatBoost, LightGBM, KNN, Random Forest, Naïve Bayes Regression and
 | Multinomial Regression| 0.7202357      |
 | KNN                   | 0.6385671      |
 
-CatBoost, LightGBM and Random Forest were selected to be part of the final stacked model as they have the best performance
-
-| ROC AUC score of Final Model|                | 
-|:--------------------------: |:-------------: | 
+CatBoost, LightGBM and Random Forest were selected to be part of the final stacked model as they have the best performance.
 
 Using the predicted ranking probabilities, we generated the investment decision by assigning investment weights to each ranking bucket and calculating the investment decision for each instrument accordingly. 
 
