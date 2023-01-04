@@ -4,9 +4,9 @@ In this project, we built a model that takes in historical data of the instrumen
 
 ### Modelling Approach
 Models used: CatBoost, LightGBM, KNN, Random Forest, Naïve Bayes Regression and Multinomial Regression 
-* Roc_auc score was used to gauge the performance of the models fitted
+* ROC AUC score was used to gauge the performance of the models fitted
 
-| Model                 | roc_auc score  | 
+| Model                 | ROC AUC score  | 
 |:--------------------: |:-------------: | 
 | CatBoost              | 17             | 
 | LightGBM              | 17             | 
@@ -18,7 +18,7 @@ Models used: CatBoost, LightGBM, KNN, Random Forest, Naïve Bayes Regression and
 
 CatBoost, LightGBM and Random Forest were selected to be part of the final stacked model as they have the best performance
 
-| roc_auc score of Final Model|                | 
+| ROC AUC score of Final Model|                | 
 |:--------------------------: |:-------------: | 
 
 Using the predicted ranking probabilities, we generated the investment decision by assigning investment weights to each ranking bucket and calculating the investment decision for each instrument accordingly. 
