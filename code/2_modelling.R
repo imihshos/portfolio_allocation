@@ -380,7 +380,7 @@ rf_params <- grid_regular(
   levels = 4
 )
 
-## Tuning Model with Resamples: took a few mins to run
+## Tuning Model with Resamples
 rf_res <- tune_grid(
   rf_wflow_stack,
   resamples = resamples_stacks,
@@ -417,13 +417,19 @@ test_prediction_rf <- bind_cols(
 test_score_rf <- test_prediction_rf %>%
   metrics_list(truth=Ranking, c(.pred_rank_1,.pred_rank_2, .pred_rank_3, .pred_rank_4, .pred_rank_5), estimate = .pred_class)
 
-## Load tuning results and scores from all models -----
-load("cat_res.RData")       # Catboost
-load("lgbm_res.RData")      # LightGBM
-load("knn_res.RData")       # KNN
-load("nb_res.RData")        # Naive Bayes
-load("log_res.RData")       # Multinomial Regression
-load("rf_res.RData")        # Random Forest
+## Saving and Loading tuning results and scores from all models -----
+save(cat_res, train_score_cat, test_score_cat, file = "cat_res.RData")
+save(lgbm_res, train_score_lgbm, test_score_lgbm, file = "lgbm_res.RData")
+save(knn_res, train_score_knn, test_score_knn, file = "knn_res.RData")
+save(nb_res, train_score_nb, test_score_nb, file = "nb_res.RData")
+save(log_res, train_score_log, test_score_log, file = "log_res.RData")
+save(rf_res, train_score_rf, test_score_rf, file = "rf_res.RData")
+#load("cat_res.RData")       # Catboost
+#load("lgbm_res.RData")      # LightGBM
+#load("knn_res.RData")       # KNN
+#load("nb_res.RData")        # Naive Bayes
+#load("log_res.RData")       # Multinomial Regression
+#load("rf_res.RData")        # Random Forest
 
 ## Scores compilation: Select the best models with roc_auc
 scores <- bind_rows(
