@@ -8,13 +8,12 @@ Models used: CatBoost, LightGBM, KNN, Random Forest, Naïve Bayes Regression and
 
 | Model                 | ROC AUC score  | 
 |:--------------------: |:-------------: | 
-| CatBoost              | 17             | 
-| LightGBM              | 17             | 
-| KNN                   | 17             |
-| Random Forest         | 17             |
-| Naïve Bayes Regression| 17             |
-| Multinomial Regression| 17             |
-
+| Random Forest         | 0.7535364      |
+| CatBoost              | 0.7529079      | 
+| LightGBM              | 0.7484488      | 
+| Naïve Bayes Regression| 0.6919283      |
+| Multinomial Regression| 0.7202357      |
+| KNN                   | 0.6385671      |
 
 CatBoost, LightGBM and Random Forest were selected to be part of the final stacked model as they have the best performance
 
